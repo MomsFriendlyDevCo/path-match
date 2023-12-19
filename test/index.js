@@ -22,6 +22,12 @@ describe('@MomsFriendlyDevCo/path-match', ()=> {
 		expect(compare('/:id', '/foo/')).to.be.deep.equal({id: 'foo'});
 		expect(compare(['/:id'], '/foo')).to.be.deep.equal({id: 'foo'});
 
+		expect(compare('/widgets/:wid?', '/widgets')).to.be.false;
+		expect(compare('/widgets/:wid?', '/widgets/')).to.be.deep.equal({wid: undefined});
+		expect(compare('/widgets/:wid?', '/widgets/123')).to.be.deep.equal({wid: '123'});
+
+		expect(compare('/:fooId/:barId/:bazId', '/one/two/three')).to.be.deep.equal({fooId: 'one', barId: 'two', bazId: 'three'});
+
 		expect(compare(/\/(?<id>.+)$/, '/bar')).to.be.deep.equal({id: 'bar'});
 		expect(compare(['/blah', /\/(?<id>.+)$/], '/bar')).to.be.deep.equal({id: 'bar'});
 	});
@@ -53,8 +59,14 @@ describe('@MomsFriendlyDevCo/path-match', ()=> {
 		expect(v.toString()).to.be.equal('/:id');
 		expect(v.isMatch('/foo')).to.be.deep.equal({id: 'foo'});
 
+		v = compile(['/widgets/:wid?']);
+		expect(v.toString()).to.be.equal('/widgets/:wid?');
+		expect(v.isMatch('/widgets')).to.be.false;
+		expect(v.isMatch('/widgets/')).to.be.deep.equal({wid: undefined});
+		expect(v.isMatch('/widgets/123')).to.be.deep.equal({wid: '123'});
+
 		v = compile(['/blah', /\/(?<id>.+)$/], '/bar');
-		 expect(v.toString()).to.be.equal('/blah OR [RE:/\\/(?<id>.+)$/]');
+		expect(v.toString()).to.be.equal('/blah OR [RE:/\\/(?<id>.+)$/]');
 		expect(v.isMatch('/blah')).to.be.deep.equal({});
 		expect(v.isMatch('/bar')).to.be.deep.equal({id: 'bar'});
 	});
