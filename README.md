@@ -50,8 +50,8 @@ rp5.isMatch('/BAZ') //= {}
 
 Why?
 ----
-Because suprisingly, nearly all of the modules out there are either old (in some cases 7 years+), don't have adiquate testkits, arn't ES6 compatible or just have an aweful syntax.
+Because surprisingly, nearly all of the modules out there are either old (in some cases 7 years+), don't have adequate testkits, arn't ES6 compatible or just have an awful syntax.
 
-* [path-to-regexp](https://github.com/pillarjs/path-to-regexp) - The seminal NPM package, pretty old, no decent testkits to show proof-of-work and its syntax for extracting path segments is truely awful
-* [path-match](https://github.com/pillarjs/path-match) - Seems to work but will _always match_ even if the route doesnt resemble the input at all
+* [path-to-regexp](https://github.com/pillarjs/path-to-regexp) - The seminal NPM package, pretty old, no decent testkits to show proof-of-work and its syntax for extracting path segments is truly awful
+* [path-match](https://github.com/pillarjs/path-match) - Seems to work but will _always match_ even if the route doesn't resemble the input at all
 * ...about 100 different clones of path-to-regexp
