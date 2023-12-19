@@ -1,0 +1,59 @@
+{
+  "name": "@momsfriendlydevco/path-match",
+  "version": "1.0.0",
+  "description": "Simple Express-like URL path matching",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "mocha"
+  },
+  "keywords": [
+    "path",
+    "paths",
+    "express",
+    "router",
+    "matcher",
+    "matching"
+  ],
+  "type": "module",
+  "imports": {
+    "#path-match": "./lib/path-match.js"
+  },
+  "exports": {
+    ".": "./lib/path-match.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/@momsfriendlydevco/patch-match.git"
+  },
+  "author": {
+    "name": "Matt Carter",
+    "email": "m@ttcarter.com",
+    "url": "https://github.com/hash-bang"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/@momsfriendlydevco/patch-match/issues"
+  },
+  "homepage": "https://github.com/@momsfriendlydevco/patch-match#readme",
+  "engineStrict": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@momsfriendlydevco/eslint-config": "^1.0.9",
+    "chai": "^4.3.10",
+    "eslint": "^8.56.0",
+    "mocha": "^10.2.0"
+  },
+  "eslintConfig": {
+    "extends": "@momsfriendlydevco",
+    "env": {
+      "es6": true,
+      "node": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 13,
+      "sourceType": "module"
+    }
+  }
+}
