@@ -1,6 +1,6 @@
 {
   "name": "@momsfriendlydevco/path-match",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Simple Express-like URL path matching",
   "scripts": {
     "lint": "eslint .",
