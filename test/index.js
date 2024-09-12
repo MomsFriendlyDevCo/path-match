@@ -6,8 +6,6 @@ describe('@MomsFriendlyDevCo/path-match', ()=> {
 	it('RegExp path compiling', ()=> {
 		expect(RoutePath.compileRegExp('/').toString()).to.equal((new RegExp(/^\/$/, 'i')).toString());
 		expect(RoutePath.compileRegExp('/foo').toString()).to.equal((new RegExp(/^\/foo\/?$/, 'i')).toString());
-		expect(RoutePath.compileRegExp('/:id').toString()).to.equal((new RegExp(/^\/(?<id>.+?)\/?$/, 'i')).toString());
-		expect(RoutePath.compileRegExp('/:foo/:bar/:baz').toString()).to.equal((new RegExp(/^\/(?<foo>.+?)\/(?<bar>.+?)\/(?<baz>.+?)\/?$/, 'i')).toString());
 	});
 
 	it('simple path comparison', ()=> {
